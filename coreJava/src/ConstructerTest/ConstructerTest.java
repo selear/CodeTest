@@ -1,4 +1,4 @@
-package ConstructerTest;
+package constructerTest;
 
 import java.util.Random;
 

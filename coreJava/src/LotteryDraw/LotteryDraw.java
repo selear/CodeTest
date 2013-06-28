@@ -1,4 +1,4 @@
-package LotteryDraw;
+package lotteryDraw;
 
 public class LotteryDraw {
 
