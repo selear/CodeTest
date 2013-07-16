@@ -1,4 +1,4 @@
-package ParamTest;
+package paramTest;
 
 public class ParamTest {
 
@@ -42,7 +42,6 @@ public class ParamTest {
 	
 	public static void tripleValue(double percent) {
 		percent = 3 * percent;
-		
 	}
 	
 	public static void tripleSalary(Employee harry) {
