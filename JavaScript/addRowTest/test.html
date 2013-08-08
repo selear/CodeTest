@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html>
+<head>
+	<Meta http-equiv="Content-Type" Content="text/html; Charset=UTF-8">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script src="script01_03.js"></script>
+</head>
+<body>
+
+	<hr/>
+	<input type="button" id="addRow" value="添加行" />
+	<input type="button" id="delRow" value="删除行" />
+
+	<hr/>
+	<input type="button" id="addCol" value="添加列" />
+	<input type="button" id="delCol" value="删除列" />
+	<hr/>
+
+	<input type="button" id="testButton" value="测试JS函数" />
+
+	<hr/>
+
+	<table id="mytable" border="1">
+		<tbody id="mainBody">
+			<tr>
+				<th width="10%">选择</th>
+				<th>指标名称</th>
+				<th>指标单位</th>
+				<th>累计</th>
+				<th>比上年同期增长%</th>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="checkbox" id="rowBox" name="" value="" onclick="setDelButtonState(this)" />
+				</td>
+				<td>
+					<input type="text" id="" name="" value="" />
+				</td>
+				<td>
+					<input type="text" id="" name="" value="" />
+				</td>
+				<td>
+					<input type="text" id="" name="" value="" />
+				</td>
+				<td>
+					<input type="text" id="" name="" value="" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<hr/>
+</body>
+</html>
