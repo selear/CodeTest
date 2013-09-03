@@ -1,0 +1,22 @@
+body {
+	background-color: #FFF;
+}
+
+#annoyingAdvert {
+	position: absolute;	/*采用绝对值进行定位*/
+	z-index: 2;	/*将当前部分放置于前台*/
+	display: none;	/*不进行显示*/
+	width: 100px;	/*其宽度为100px*/
+	background-color: #FFC;	/*背景色*/
+	padding: 10px;	/*内边框, 用于限制文字显示的范围*/
+	margin: 10px;	/*外边框, 不受背景色控制*/
+	border: 5px solid yellow;	/*边框宽度和颜色*/
+}
+
+#closeBox {
+	position: absolute;
+	color: red;
+	font-size: 1.5em;
+	top: 0;
+	right: 0;
+}
