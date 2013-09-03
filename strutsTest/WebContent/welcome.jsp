@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	本站访问次数: ${applicationScope.counter} <br/>
-	${sessionScope.user }, 您已经登陆! <br/>
-	${requestScope.tip}
+	本站访问次数: ${applicationScope.counter}<br/>
+	${sessionScope.user}, 您已经登陆!<br/>
+	${requestScope.tip}<br>
+	
+	从系统读取Cookie值: ${cookie.user.value}<br/>
 </body>
 </html>

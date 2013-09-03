@@ -1,12 +1,18 @@
 package action;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.interceptor.ServletResponseAware;
+
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 
-public class LoginAction implements Action {
+public class LoginAction implements Action, ServletResponseAware {
 
 	private String username;
 	private String password;
+	private HttpServletResponse response;
 
 	public String getUsername() {
 		return username;
@@ -39,12 +45,22 @@ public class LoginAction implements Action {
 		//在Session范围添加属性
 		ctx.getSession().put("user", getUsername());
 		if(getUsername().equals("test") && getPassword().equals("adminPass")) {
-			ActionContext.getContext().getSession().put("user", getUsername());
+			
+			//通过Response添加Cookies
+			Cookie c = new Cookie("user", getUsername());
+			c.setMaxAge(60 * 60);
+			response.addCookie(c);
+			
 			ctx.put("tip", "服务器提示: 您已经成功登录");
 			return SUCCESS;
 		} else {
 			ctx.put("tip", "服务器提示: 登录失败");
 			return ERROR;
 		}
+	}
+
+	@Override
+	public void setServletResponse(HttpServletResponse response) {
+		this.response = response;
 	}
 }
