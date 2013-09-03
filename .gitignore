@@ -15,6 +15,10 @@ local.properties
 .classpath
 .settings/
 .loadpath
+# 自定义忽略文件
+*.jar
+# 自定义忽略文件夹
+Servers/
 
 # External tool builders
 .externalToolBuilders/
