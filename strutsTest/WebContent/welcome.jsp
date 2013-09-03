@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	THIS IS WELCOME PAGE. ${user}
+	本站访问次数: ${applicationScope.counter} <br/>
+	${sessionScope.user }, 您已经登陆! <br/>
+	${requestScope.tip}
 </body>
 </html>
