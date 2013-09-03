@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="utf-8" />
+	<title></title>
+	<link rel="stylesheet" href="script01.css">
+	<script src="script01.js"></script>
+</head>
+<body>
+	<div id="tips" style="border-style:solid;border-color:#8FB26B;border-width:3px;width:180px;height:50px;filter:alpha(Opacity=60);z-index:10;background-color:#CCFF99;display:none;">提示信息</div>
+	<table>
+		<tr>
+			<th>HEAD_01</th>
+			<th>HEAD_02</th>
+			<th>HEAD_03</th>
+		</tr>
+		<tr>
+			<td>2011-11-11</td>
+			<td>
+				<span class="clk2Edit">08:30:30</span>
+			</td>
+			<td>
+				<span class="clk2Edit">15:30:45</span>
+			</td>
+		</tr>
+		<tr>
+			<td>2012-12-12</td>
+			<td>
+				<span class="clk2Edit">08:17:02</span>
+			</td>
+			<td>
+				<span class="clk2Edit">17:28:16</span>
+			</td>
+		</tr>
+	</table>
+	<hr />
+	<div onmousemove="position();" onmouseout="hide();">ABC</div>
+	<div onmousemove="position();" onmouseout="hide();">DEF</div>
+	<div onmousemove="position();" onmouseout="hide();">GHI</div>
+	<div id="tip" style="position: fixed; visibility: hidden; background-color:#FFFFC5;">that's abc!</div>
+	<script type="text/javascript">
+		function position() {
+			var d = document.getElementById('tip');
+
+			d.style.visibility = 'visible';
+			// d.style.left = event.screenX + 'px';
+			// d.style.top = event.screenY + 'px';
+			// d.style.left = window.screenX + 'px';
+			// d.style.top = window.screenY + 'px';
+			d.style.left = event.x + 'px';
+			d.style.top = event.y + 'px';
+		}
+		function hide() {
+			document.getElementById('tip').style.visibility = 'hidden';
+		}
+	</script>
+</body>
+</html>

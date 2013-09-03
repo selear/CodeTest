@@ -1,0 +1,25 @@
+table, th, td {
+	border: green 5px;
+	border-style: outset;
+	border-collapse: collapse;
+}
+
+th, td {
+	text-align: center;
+	vertical-align: center;
+}
+
+th {
+	font-size: 1.25em;
+	width: 120px;
+	height: 30px;
+}
+
+td {
+	font-size: 0.875em;
+	height: 22px
+}
+
+span.clk2Edit:hover {
+	display: block;
+}
