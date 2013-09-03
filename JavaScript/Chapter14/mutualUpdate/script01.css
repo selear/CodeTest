@@ -1,0 +1,21 @@
+a {
+	display: block;
+	float: left;
+	padding: 10px;
+	margin: 10px;
+	font-weight: bold;
+	color: white;
+	background-color: gray;
+}
+
+.red{
+	color: red;
+}
+
+.green{
+	color: green;
+}
+
+.blue{
+	color: blue;
+}
