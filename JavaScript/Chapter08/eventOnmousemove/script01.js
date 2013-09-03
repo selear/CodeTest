@@ -9,5 +9,8 @@ function moveHandler(evt) {
 }
 
 function animateEyes(xPos, yPos) {
-	
+	var  = document.getElementById("");
+	var """" = document.getElementById("");
+	var eye = document.getElementById("");	
+	var eye = document.getElementById("");
 }

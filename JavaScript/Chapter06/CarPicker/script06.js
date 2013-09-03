@@ -56,25 +56,25 @@ function validForm() {
 					classBack += thisClass;
 					break;
 				case "radio":
-					if(allGood && !radioPicked(thisTag.name)) {
+					if (allGood && !radioPicked(thisTag.name)) {
 						classBack = "invalid ";
 					}
 					classBack += thisClass;
 					break;
 				case "isNum":
-					if(allGood && !isNum(thisTag.value)) {
+					if (allGood && !isNum(thisTag.value)) {
 						classBack = "invalid ";
 					}
 					classBack += thisClass;
 					break;
 				case "isZip":
-					if(allGood && !isZip(thisTag.value)) {
+					if (allGood && !isZip(thisTag.value)) {
 						classBack = "invalid ";
 					}
 					classBack += thisClass;
 					break;
 				case "email":
-					if(allGood && !validEmail(thisTag.value)) {
+					if (allGood && !validEmail(thisTag.value)) {
 						classBack = "invalid ";
 					}
 					classBack += thisClass;
@@ -98,16 +98,16 @@ function validForm() {
 		function radioPicked(radioName) {
 			var radioSet = "";
 
-			for(var k = 0; k < document.forms.length; k++) {
-				if(!radioSet) {
+			for (var k = 0; k < document.forms.length; k++) {
+				if (!radioSet) {
 					radioSet = document.forms[k][radioName];
 				}
 			}
-			if(!radioSet) {
+			if (!radioSet) {
 				return false;
 			}
-			for(k = 0; k < radioSet.length; k++) {
-				if(radioSet[k].checked) {
+			for (k = 0; k < radioSet.length; k++) {
+				if (radioSet[k].checked) {
 					return true;
 				}
 			}
@@ -115,14 +115,14 @@ function validForm() {
 		}
 
 		function isNum(passedVal) {
-			if(passedVal == "") {
+			if (passedVal == "") {
 				return false;
 			}
-			for(var k = 0; k < passedVal.length; k++) {
-				if(passedVal.charAt(k) < "0") {
+			for (var k = 0; k < passedVal.length; k++) {
+				if (passedVal.charAt(k) < "0") {
 					return false;
 				}
-				if(passedVal.charAt(k) > "9") {
+				if (passedVal.charAt(k) > "9") {
 					return false;
 				}
 			}
@@ -130,7 +130,7 @@ function validForm() {
 		}
 
 		function isZip(inZip) {
-			if(inZip == "") {
+			if (inZip == "") {
 				return true;
 			}
 			return (isNum(inZip));
@@ -139,28 +139,28 @@ function validForm() {
 		function validEmail(email) {
 			var invalidChars = " /:,;";
 
-			if(email == "") {
+			if (email == "") {
 				return false;
 			}
-			for(var k = 0; k < invalidChars.length; k++) {	//查找电子邮件是否存在非法字符
+			for (var k = 0; k < invalidChars.length; k++) { //查找电子邮件是否存在非法字符
 				var badChar = invalidChars.charAt(k);
-				if(email.indexOf(badChar) > -1) {
+				if (email.indexOf(badChar) > -1) {
 					return false;
 				}
 			}
-			var atPos = email.indexOf("@", 1);	//"@"符号是否存在多个
-			if(atPos == -1) {
+			var atPos = email.indexOf("@", 1); //"@"符号是否存在多个
+			if (atPos == -1) {
 				return false;
 			}
-			if(email.indexOf("@", atPos + 1) != -1) {
+			if (email.indexOf("@", atPos + 1) != -1) {
 				return false;
 			}
 
-			var periodPos = email.indexOf(".", atPos);	//"@"符号之后搜索"."
-			if(periodPos == -1) {
+			var periodPos = email.indexOf(".", atPos); //"@"符号之后搜索"."
+			if (periodPos == -1) {
 				return false;
 			}
-			if(periodPos + 3 > email.length) {	//确保电子邮件地址中点号后面至少有两个字符
+			if (periodPos + 3 > email.length) { //确保电子邮件地址中点号后面至少有两个字符
 				return false;
 			}
 			return true;
@@ -175,7 +175,7 @@ function validForm() {
 }
 
 function doorSet() {
-	if(this.checked) {
+	if (this.checked) {
 		document.getElementById("twoDoor").checked = true;
 	} else {
 		document.getElementById("fourDoor").checked = true;
