@@ -1,19 +1,23 @@
 package action;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 
-public class LoginAction implements Action, ServletResponseAware {
+public class LoginAction implements Action, ServletResponseAware, ServletRequestAware {
 
 	private String username;
 	private String password;
 	private HttpServletResponse response;
 
+	private HttpServletRequest request;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -58,9 +62,33 @@ public class LoginAction implements Action, ServletResponseAware {
 			return ERROR;
 		}
 	}
+	
+	public String sessionValidate() throws Exception {
+		
+		ActionContext ctx = ActionContext.getContext();
+		
+		System.out.println("user:\t" + ctx.getSession().get("user"));
+		
+		return null;
+	}
+	
+	public String logout() throws Exception {
 
+			request.getSession().removeAttribute("user");
+			request.getSession().invalidate();
+			System.out.println(request.getSession().getAttribute("user"));
+			response.sendRedirect("/strutsTest/login.jsp");
+		
+		return null;
+	}
+	
 	@Override
 	public void setServletResponse(HttpServletResponse response) {
 		this.response = response;
+	}
+
+	@Override
+	public void setServletRequest(HttpServletRequest request) {
+		this.request = request;
 	}
 }

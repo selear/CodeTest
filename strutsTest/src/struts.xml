@@ -9,5 +9,11 @@
 			<result name="error">/error.jsp</result>
 			<result name="success">/welcome.jsp</result>
 		</action>
+		
+		<action name="sessionValidate" class="action.LoginAction" method="sessionValidate">
+		</action>
+		
+		<action name="logout" class="action.LoginAction" method="logout">
+		</action>
 	</package>
 </struts>

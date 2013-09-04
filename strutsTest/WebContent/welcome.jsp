@@ -11,6 +11,10 @@
 	${sessionScope.user}, 您已经登陆!<br/>
 	${requestScope.tip}<br>
 	
-	从系统读取Cookie值: ${cookie.user.value}<br/>
+	从系统读取Cookie值: ${cookie.user.value}<br/><br>
+	
+	<a href="sessionValidate">Click Here to sessionValidate</a><br><br>
+	
+	<a href="logout">Click Here to logout</a>
 </body>
 </html>
