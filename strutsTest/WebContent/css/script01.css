@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+span.left {
+	position: relative;
+	left: 1em;
+}
+
+span.right {
+	position: relative;
+	left: 2em;
+	right: 1em;
+}

@@ -4,6 +4,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.catalina.core.ApplicationContext;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
@@ -61,6 +62,14 @@ public class LoginAction implements Action, ServletResponseAware, ServletRequest
 			ctx.put("tip", "服务器提示: 登录失败");
 			return ERROR;
 		}
+	}
+	
+	public String regist() throws Exception {
+		
+		ActionContext ctx = ActionContext.getContext();
+		ctx.put("tip", "服务器提示: 注册已成功, 您的用户名为: "+ getUsername());
+		
+		return SUCCESS;
 	}
 	
 	public String sessionValidate() throws Exception {
