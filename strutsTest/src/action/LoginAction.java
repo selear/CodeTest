@@ -10,8 +10,9 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginAction implements Action, ServletResponseAware, ServletRequestAware {
+public class LoginAction extends ActionSupport implements ServletResponseAware, ServletRequestAware {
 
 	private String username;
 	private String password;
@@ -35,7 +36,7 @@ public class LoginAction implements Action, ServletResponseAware, ServletRequest
 		this.password = password;
 	}
 
-	public String execute() throws Exception {
+	public String login() throws Exception {
 		
 		//在Application范围内添加变量
 		ActionContext ctx = ActionContext.getContext();

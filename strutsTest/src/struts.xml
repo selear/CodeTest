@@ -5,20 +5,15 @@
 <struts>
 	<package name="default" extends="struts-default">
 	
-		<!-- CONFIG ABOUT login -->
-		<action name="login" class="action.LoginAction">
+		<!-- 启用动态通配符, 使用动态方法相应请求 -->
+		<!-- 额外说明, 当前*直接写在Actin之前, 并自动关联到相应的方法上; -->
+		<!-- 本例中, 能够让struts响应的请求实际上为: "loginAction", "registAction"; 并不需要在请求中指定调用的方法 -->
+		<action name="*Action" class="action.LoginAction" method="{1}">
 			<result name="input">/login.jsp</result>
 			<result name="error">/error.jsp</result>
 			<result name="success">/welcome.jsp</result>
 		</action>
-		
-		<!-- CONFIG ABOUT regist -->
-		<action name="regist" class="action.LoginAction" method="regist">
-			<result name="input">/login.jsp</result>
-			<result name="error">/error.jsp</result>
-			<result name="success">/welcome.jsp</result>
-		</action>
-		
+
 		<action name="sessionValidate" class="action.LoginAction" method="sessionValidate"></action>
 		<action name="logout" class="action.LoginAction" method="logout"></action>
 	</package>

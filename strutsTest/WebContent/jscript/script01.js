@@ -12,7 +12,8 @@ function initAll() {
 
 function setAction() {
 	var curForm = document.forms[0];
-	curForm.action = this.name;
+	curForm.action = this.name + "Action";
+	alert("curForm.action: " + curForm.action);
 	console.log(curForm.action);
 	curForm.submit();
 }
