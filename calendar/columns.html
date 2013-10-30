@@ -1,0 +1,33 @@
+<html>
+<head>
+	<!-- <script type="text/javascript" src="calendar.js"></script> -->
+	<!-- 如果使用属性clean:both, 则表示该类元素周围不允许出现浮动元素 -->
+<style type="text/css">
+		div {
+			border: 1px solid red;
+			margin: 6px;
+			padding: 6px;
+		}
+
+		div.read {
+			width: 70%;
+			height: 70%;
+			float: left;
+		}
+
+		div.desc, div.file, div.download{
+			width: 20%;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	Hello world.
+<div style="width: 800px; height: 600px;">
+	<div class="read">this has content</div>
+	<div class="desc">this is description</div>
+	<div class="file">this shows files</div>
+	<div class="download">this shows files to download</div>
+</div>
+</body>
+</html>

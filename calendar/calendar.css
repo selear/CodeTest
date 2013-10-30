@@ -1,0 +1,8 @@
+div.container {
+	width: 36px;
+	height: 28px;
+	border: 1px solid silver;
+	float: left;
+	margin: 3px;
+	text-align: center;
+}
