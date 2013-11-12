@@ -37,10 +37,13 @@ function createCalendar() {
 		dateObj.appendChild(content);
 	}
 
-	function constructCalendar(weekdayId, daysId) {
-		var weekdayObj = document.getElementById(weekdayId);
+	function constructCalendar(weekId, daysId) {
+		var weekObj = document.getElementById(weekId);
 		var daysObj = document.getElementById(daysId);
 
+		//填充week
 		
+
+		//填充days
 	}
 }
